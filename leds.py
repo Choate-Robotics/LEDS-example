@@ -3,7 +3,8 @@ import math
 
 class Type():
         
-        def KStatic(r, g, b):
+        def KStatic(r: int, g: int, b: int):
+            ''' Returns a static color type'''
             return {
                 'type': 1,
                 'color': {
@@ -18,7 +19,7 @@ class Type():
                 'type': 2
             }
         
-        def KTrack(r1, g1, b1, r2, g2, b2):
+        def KTrack(r1: int, g1: int, b1:int, r2:int, g2:int, b2:int):
             return {
                 'type': 3,
                 'color': {
@@ -31,7 +32,7 @@ class Type():
                 }
             }
         
-        def KBlink(r,g,b):
+        def KBlink(r:int,g:int,b:int):
             return {
                 'type': 4,
                 'color': {
@@ -41,12 +42,13 @@ class Type():
                 }
             }
             
-        def KLadder(typeA,typeB,percent,speed):
+        def KLadder(typeA,typeB,percent: float,speed: int):
+            ''' Returns a ladder type (typeA is the bottom, typeB is the top. They are both Type objects)'''
             return {
                 'type': 5,
                 'percent': percent, # 0-1
-                'typeA': typeA,
-                'typeB': typeB,
+                'typeA': typeA, # Instance of Type class
+                'typeB': typeB, # Instance of Type class
                 'speed': speed
             }
         
